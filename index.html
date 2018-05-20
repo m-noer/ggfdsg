@@ -45,13 +45,13 @@
           <div class="box2 container-fluid">
             <div class="row">
               <div class="col-4 like icon">
-                <p><i class="fa fa-thumbs-up" aria-hidden="true"></i> Up</p>
+                <p onclick="sound()"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Up</p>
               </div>
               <div class="col-4 share icon">
                 <p><a href="detail-post.html"><i class="fa fa-comment" aria-hidden="true"></i> Comment</a></p>
               </div>
               <div class="col-4 Comment icon">
-                <p><i class="fa fa-share-alt" aria-hidden="true"></i> Share</p>
+                <p onclick="sound()"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</p>
               </div>
             </div>
           </div>
@@ -65,7 +65,11 @@
     <script src="js/barba.js" type="text/javascript"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
-
+      var bleep = new Audio();
+      bleep.src = "button-09.mp3";
+      function sound() {
+        bleep.play();
+      }
     </script>
   </body>
 </html>
