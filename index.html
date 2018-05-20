@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Welcome Page</title>
+  <link rel="stylesheet" href="bootstrap-grid.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="onepage-scroll.css">
+</head>
+
+<body>
+  <div class="loader" onload="setTimeout(tes,2427)">
+    <img src="logo_laporin.png" alt="">
+    <!-- <div id="bm"></div> -->
+  </div>
+
+  <div class="main">
+    <section class="page1">
+      <span>
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-xm-12 col-md-6">
+                <div class="logo">
+                  <img src="logo_laporin.png" alt="">
+                </div>
+              </div>
+              <div class="col-12 col-xm-12 col-md-6">
+                <h1>Apa itu Laporin?</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse numquam voluptates vitae doloremque ab magni consequuntur ut nam mollitia illo reprehenderit earum quo consequatur impedit ducimus in facilis commodi, fugit!</p>
+                <button class="btn" type="button"><a href="home.html">Laporin!</a></button>
+              </div>
+            </div>
+          </div>
+        </span>
+
+    </section>
+    <section class="page2">
+      <span>
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-xm-12 col-md-6">
+                <div class="logo">
+                  <img src="Picture1.png" alt="">
+                </div>
+              </div>
+              <div class="col-12 col-xm-12 col-md-6">
+                <h1>BPJS tidak dilayani?</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse numquam voluptates vitae doloremque ab magni consequuntur ut nam mollitia illo reprehenderit earum quo consequatur impedit ducimus in facilis commodi, fugit!</p>
+              </div>
+            </div>
+          </div>
+        </span>
+    </section>
+    <section class="page3">
+      <span>
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-xm-12 col-md-6">
+                <div class="logo">
+                  <img src="Picture2.png" alt="">
+                </div>
+              </div>
+              <div class="col-12 col-xm-12 col-md-6">
+                <h1>Jalanan rusak ?</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse numquam voluptates vitae doloremque ab magni consequuntur ut nam mollitia illo reprehenderit earum quo consequatur impedit ducimus in facilis commodi, fugit!</p>
+              </div>
+            </div>
+          </div>
+        </span>
+    </section>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="jquery.onepage-scroll.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="lottie.js"></script>
+  <script>
+    var animation = lottie.loadAnimation({
+      container: document.getElementById('bm'),
+      renderer: 'svg',
+      autoplay: true,
+      loop: false,
+      path: 'data.json'
+    });
+
+    function tes() {
+      document.querySelector(".loader").style.backgroundColor = "#1DA1F2"
+    }
+  </script>
+</body>
+
+</html>
