@@ -10,13 +10,13 @@
   </head>
   <body onload="tes()">
 
-    <div id="detail_post">
+    <div id="app">
       <nav>
         <div class="cell isi-laporan">
-          <a href="index.html" class="active"><i class="fa fa-home fa-lg"  aria-hidden="true"></i></a>
+          <a href="home.html" class="active"><i class="fa fa-home fa-lg"  aria-hidden="true"></i></a>
         </div>
         <div class="cell isi-laporan">
-          <a href=""><i class="fa fa-user fa-lg"  aria-hidden="true"></i></a>
+          <a href="#footer"><i class="fa fa-user fa-lg"  aria-hidden="true"></i></a>
         </div>
         <div class="cell isi-laporan">
           <a href=""><i class="fa fa-dollar fa-lg"  aria-hidden="true"></i></a>
@@ -28,7 +28,7 @@
           <a href=""><i class="fa fa-bars fa-lg"  aria-hidden="true"></i></a>
         </div>
       </nav>
-      <div class="search-box">
+      <div class="search-box" id="search">
         <div class="input-box">
           <i class="fa fa-search" aria-hidden="true"></i>
           <input type="text" placeholder="Search">
@@ -70,73 +70,52 @@
           </div>
         </div>
 
-        <div class="comment">
-          <div class="cell1">
-            <div class="photo">
-              <img src="images/profil.jpeg" alt="">
-            </div>
-          </div>
-          <div class="isi-comment">
-            <h1>Yusa</h1>
-            <p>kurang tau bos</p>
-            <p>1 minutes ago</p>
-          </div>
-        </div>
-        <div class="comment">
-          <div class="cell1">
-            <div class="photo">
-              <img src="images/profil3.jpg" alt="">
-            </div>
-          </div>
-          <div class="isi-comment">
-            <h1>Mei Ling</h1>
-            <p>lah silahkan</p>
-            <p>1 minutes ago</p>
-          </div>
-        </div>
-        <div class="comment">
-          <div class="cell1">
-            <div class="photo">
-              <img src="images/profil4.jpg" alt="">
-            </div>
-          </div>
-          <div class="isi-comment">
-            <h1>Sudarmawan</h1>
-            <p>Jadi gini dan gini gini , you harus ini dan ini biar gini itu dan itu, baik kawan kawan</p>
-            <p>1 minutes ago</p>
-          </div>
-        </div>
-        <div class="comment">
-          <div class="cell1">
-            <div class="photo">
-              <img src="images/profil3.jpg" alt="">
-            </div>
-          </div>
-          <div class="isi-comment">
-            <h1>Mei Ling</h1>
-            <p>lah silahkan</p>
-            <p>1 minutes ago</p>
-          </div>
-        </div>
-        <div class="comment">
-          <div class="cell1">
-            <div class="photo">
-              <img src="images/profil4.jpg" alt="">
-            </div>
-          </div>
-          <div class="isi-comment">
-            <h1>Sudarmawan</h1>
-            <p>Jadi gini dan gini gini , you harus ini dan ini biar gini itu dan itu, baik kawan kawan</p>
-            <p>1 minutes ago</p>
-          </div>
+        <div>
+          <ul>
+            <li class="comment">
+              <div class="cell1">
+                <div class="photo">
+                  <img src="images/profil4.jpg" alt="">
+                </div>
+              </div>
+              <div class="isi-comment">
+                <h1>Sudarmawan</h1>
+                <p>Jadi gini dan gini gini , you harus ini dan ini biar gini itu dan itu, baik kawan kawan</p>
+                <p>1 minutes ago</p>
+              </div>
+            </li>
+            <li class="comment">
+              <div class="cell1">
+                <div class="photo">
+                  <img src="images/profil4.jpg" alt="">
+                </div>
+              </div>
+              <div class="isi-comment">
+                <h1>Sudarmawan</h1>
+                <p>Jadi gini dan gini gini , you harus ini dan ini biar gini itu dan itu, baik kawan kawan</p>
+                <p>1 minutes ago</p>
+              </div>
+            </li>
+            <li class="comment">
+              <div class="cell1">
+                <div class="photo">
+                  <img src="images/profil4.jpg" alt="">
+                </div>
+              </div>
+              <div class="isi-comment">
+                <h1>Sudarmawan</h1>
+                <p>Jadi gini dan gini gini , you harus ini dan ini biar gini itu dan itu, baik kawan kawan</p>
+                <p>1 minutes ago</p>
+              </div>
+            </li>
+            <todo-list :todos="todos"></todo-list>
+          </ul>
         </div>
       </div>
+      <todo-form @todo-created="addTodo"></todo-form>
     </div>
 
-    <div class="tulis-comment">
-      <input type="text" placeholder="Tulis komentar disini..."> POST
-    </div>
-    <footer class="post-detail-page"></footer>
+    <footer id="footer" class="post-detail-page"></footer>
 
     <script src="js/vue.min.js" charset="utf-8"></script>
     <script src="js/jquery.min.js" charset="utf-8"></script>
@@ -144,13 +123,19 @@
     <script src="js/barba.js" type="text/javascript"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
-      var post = document.getElementById('detail_post');
+      var post = document.getElementById('app');
 
       var postPg = new Hammer(post);
 
       postPg.on("swiperight", function(ev) {
           window.history.back();
       });
+
+      function foot(){
+        window.location = "#footer";
+        window.scrollTo(0,50);
+      }
+
     </script>
   </body>
 </html>
