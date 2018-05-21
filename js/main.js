@@ -43,7 +43,7 @@ Vue.component('navbar', {
 });
 
 Vue.component('search', {
-  template: '<div class="search-box"><div class="input-box"> <i class="fa fa-search" aria-hidden="true"></i> <input type="text" placeholder="Search"></div></div>'
+  template: '<div class="search-box" id="search"><div class="input-box"> <i class="fa fa-search" aria-hidden="true"></i> <input type="text" placeholder="Search"></div></div>'
 });
 
 var vm = new Vue({
@@ -51,5 +51,54 @@ var vm = new Vue({
 });
 
 function tes() {
-  document.getElementById('content2').style.transform = "translateX(0)"
+  document.getElementById('content2').style.transform = "scale(1)"
 };
+
+// Our app here
+Vue.component('todo-form', {
+  template: '<form class="tulis-comment" @submit.prevent="todoEvent"> <input type="text" v-model="newTodo" placeholder="Tulis komentar disini...">' +
+            '<input type="submit" value="POST" onclick="foot()"></form>',
+  data: function () {
+    return {
+      newTodo: ''
+    }
+  },
+  methods: {
+    todoEvent: function () {
+      this.$emit('todo-created', this.newTodo);
+      this.newTodo = '';
+    }
+  }
+});
+Vue.component('todo-list', {
+  template: '<ul><li class="comment" v-for="todo in todos"><div class="cell1"><div class="photo"> <img src="images/profil.jpeg" alt=""></div></div><div class="isi-comment"><h1>Yusa</h1><p>{{todo}}</p><p>a few seconds ago</p></div></li></ul>',
+  props: ['todos']
+});
+new Vue({
+  el: '#app',
+  data: {
+    'todos': []
+  },
+  methods: {
+    addTodo: function (todo) {
+      this.todos.push(todo);
+    }
+  }
+});
+
+var prevScrollpos = window.pageYOffset;
+var x = prevScrollpos + 5;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos < 50) {
+    document.getElementById("search").style.top = "0";
+  } else if (prevScrollpos > currentScrollPos) {
+    document.getElementById("search").style.top = "0";
+  } else {
+    document.getElementById("search").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+
+  console.log("prev: " + prevScrollpos);
+  console.log("x: " + x);
+}
