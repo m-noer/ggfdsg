@@ -7,14 +7,14 @@ body {
   font-family: sans-serif;
   background: #D3D6DB;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 /* Transition page*/
 #content1, #content2 {
-  transition: transform 0.1s ease-out;
-  -webkit-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  transform: translateX(100%);
+  transition: transform 0.2s ease-out;
+  transform: scale(0);
   /* top: 0;
   bottom: 0;
   position: sticky;
@@ -72,6 +72,8 @@ nav a:hover i, nav a:active i, .active{
   justify-content: center;
   top: 0;
   z-index: 9;
+  position: fixed;
+  transition: top 0.3s;
 }
 
 .input-box{
@@ -113,6 +115,7 @@ nav a:hover i, nav a:active i, .active{
   padding: 15px;
   font-size: 16px;
   box-sizing: border-box;
+  margin-top: 50px;
 }
 
 .lapor:hover {
@@ -225,6 +228,10 @@ nav a:hover i, nav a:active i, .active{
 }
 
 /* post-detail */
+.post-detail{
+  margin-top: 50px;
+}
+
 
 /* comment */
 .comment {
@@ -264,7 +271,6 @@ nav a:hover i, nav a:active i, .active{
   position: fixed;
   bottom: 50px;
   text-align: center;
-  color: #03A9F4;
 }
 .tulis-comment input[type=text]{
   height: 100%;
@@ -274,11 +280,21 @@ nav a:hover i, nav a:active i, .active{
   font-size: 14px;
 }
 
+.tulis-comment input[type=submit]{
+  border: none;
+  height: 100%;
+  padding: 10px;
+  background: none;
+  color: #03A9F4;
+  font-weight: 600;
+}
+
 .tulis-comment input::placeholder {
   font-size: 14px;
   color: #585353;
   letter-spacing: .06em;
 }
+
 
 /* footer */
 footer{
